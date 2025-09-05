@@ -78,21 +78,13 @@ app.delete('/api/posts/:id', async (req, res) => {
     }
 });
 
-// New API route to get GitHub repos
-app.get('/api/github-repos', async (req, res) => {
-    try {
-        const githubUsername = 'akash9569';
-        const response = await fetch(`https://api.github.com/users/${githubUsername}/repos`);
-        if (!response.ok) {
-            throw new Error('Failed to fetch GitHub repositories.');
-        }
-        const repos = await response.json();
-        res.json(repos);
-    } catch (error) {
-        console.error('Error fetching GitHub repos:', error);
-        res.status(500).json({ message: 'Error retrieving GitHub repositories.' });
-    }
-});
+app.get('/', (req, res) => {
+    res.send({
+        activeStatus: true,
+        error: false
+    })
+})
+
 
 // Serve static files from the client directory
 app.use(express.static(path.join(__dirname, '../client')));
