@@ -1,0 +1,23 @@
+[
+  {
+    "degree": "Bachelor of Technical Education",
+    "university": "AKTU",
+    "institution": "School of Management of Sciences | Lucknow",
+    "year": "2023-2026 | Pursuing",
+    "image": "./assets/images/educat/college.jpg"
+  },
+  {
+    "degree": "Diploma",
+    "university": "BTEUP Board",
+    "institution": "Government Polytechnic Rajgarh Mirzapur",
+    "year": "2020-2023 | Completed",
+    "image": "./assets/images/educat/college1.jpg"
+  },
+  {
+    "degree": "Intermediate (12th)",
+    "university": "UP Board",
+    "institution": "St.Thomas Inter College | Chunar Mirzapur",
+    "year": "2019-2021 | Completed",
+    "image": "./assets/images/educat/school.jpg"
+  }
+]

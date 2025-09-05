@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Portfolio Website",
+    "image": "Portfolio",
+    "desc": "A personal portfolio website showcasing my skills, projects, and professional background. Built with HTML, CSS, and JavaScript, it features a responsive design and smooth animations to provide an engaging user experience.",
+    "links": {
+      "view": "https://devilucifer.netlify.app/",
+      "code": "https://github.com/akash9569/Portfolio"
+    }
+  },
+  {
+    "name": "IIMM Ayodhya Clone",
+    "image": "IIMM",
+    "desc": "A responsive frontend clone of the IIMM Ayodhya website, developed using React.js and Bootstrap. This project demonstrates proficiency in modern web development practices, component-based design, and responsive layouts.",
+    "links": {
+      "view": "https://iimm.netlify.app/",
+      "code": "https://github.com/akash9569/IIMM-Ayodhya-Clone"
+    }
+  },
+  {
+    "name": "Goal Tracker",
+    "image": "Goal",
+    "desc": "A robust goal tracker app built with React.js. It helps users efficiently manage goals, deadlines, and priorities, featuring progress tracking, reminders, and local storage support. The app includes both light and dark themes.",
+    "links": {
+      "view": "https://milesto.netlify.app/",
+      "code": "https://github.com/akash9569/Goal-Tracker-App"
+    }
+  }
+]

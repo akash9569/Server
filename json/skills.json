@@ -1,0 +1,20 @@
+[
+  { "name": "Java", "icon": "https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" },
+  { "name": "Spring Boot", "icon": "https://cdn.worldvectorlogo.com/logos/spring-3.svg" },
+  { "name": "Python", "icon": "https://img.icons8.com/color/48/000000/python.png" },
+  { "name": "MongoDB", "icon": "https://img.icons8.com/color/48/000000/mongodb.png" },
+  { "name": "Express.js", "icon": "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" },
+  { "name": "React.js", "icon": "https://img.icons8.com/color/48/000000/react-native.png" },
+  { "name": "Node.js", "icon": "https://img.icons8.com/color/48/000000/nodejs.png" },
+  { "name": "Android", "icon": "https://img.icons8.com/color/48/000000/office.png" },
+  { "name": "Flutter", "icon": "https://img.icons8.com/color/48/000000/flutter.png" },
+  { "name": "MySQL", "icon": "https://img.icons8.com/color/48/000000/mysql.png" },
+  { "name": "HTML5", "icon": "https://img.icons8.com/color/48/000000/html.png" },
+  { "name": "CSS3", "icon": "https://img.icons8.com/color/48/000000/css.png" },
+  { "name": "Tailwind", "icon": "https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg" },
+  { "name": "JavaScript", "icon": "https://img.icons8.com/color/48/000000/javascript.png" },
+  { "name": "PHP", "icon": "https://img.icons8.com/color/48/000000/php.png" },
+  { "name": "MS Office", "icon": "https://img.icons8.com/color/48/000000/microsoft.png" },
+  { "name": "AdobeXD", "icon": "https://img.icons8.com/color/48/000000/adobe-xd.png" },
+  { "name": "Power BI", "icon": "https://img.icons8.com/color/48/000000/power-bi.png" }
+]
