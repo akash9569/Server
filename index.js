@@ -14,9 +14,12 @@ app.use(cors());
 
 // Connect to MongoDB
 const dbURI = process.env.MONGODB_URI;
-mongoose.connect(dbURI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Could not connect to MongoDB:', err));
+mongoose.connect(dbURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+  .then(() => console.log('✅ Connected to MongoDB'))
+  .catch(err => console.error('❌ Could not connect to MongoDB:', err));
 
 // Blog Post Schema
 const blogPostSchema = new mongoose.Schema({
@@ -52,9 +55,7 @@ app.get('/api/posts', async (req, res) => {
 app.get('/api/posts/:id', async (req, res) => {
     try {
         const post = await BlogPost.findById(req.params.id);
-        if (!post) {
-            return res.status(404).json({ message: 'Post not found.' });
-        }
+        if (!post) return res.status(404).json({ message: 'Post not found.' });
         res.json(post);
     } catch (error) {
         res.status(500).json({ message: 'Error retrieving post.' });
@@ -64,20 +65,24 @@ app.get('/api/posts/:id', async (req, res) => {
 app.delete('/api/posts/:id', async (req, res) => {
     try {
         const deletedPost = await BlogPost.findByIdAndDelete(req.params.id);
-        if (!deletedPost) {
-            return res.status(404).json({ message: 'Post not found.' });
-        }
+        if (!deletedPost) return res.status(404).json({ message: 'Post not found.' });
         res.status(200).json({ message: 'Post deleted successfully' });
     } catch (error) {
         res.status(500).json({ message: 'Error deleting post.' });
     }
 });
 
-// Serve static files from the client directory.
-// This single line will serve index.html for the root URL automatically.
-app.use(express.static(path.join(__dirname, '../client')));
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.get('/', (req, res) => {
+    res.send({ activeStatus: true, error: false });
 });
+
+// Serve frontend
+app.use(express.static(path.join(__dirname, '../client/build')));
+app.get(/.*/, (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
+
+
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
