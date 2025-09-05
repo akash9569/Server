@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
 const cors = require('cors');
-const fetch = require('node-fetch');
 
 dotenv.config({ path: path.join(__dirname, '.env') });
 
@@ -31,7 +30,6 @@ const blogPostSchema = new mongoose.Schema({
 const BlogPost = mongoose.model('BlogPost', blogPostSchema);
 
 // API Routes
-// POST a new blog post
 app.post('/api/posts', async (req, res) => {
     try {
         const newPost = new BlogPost(req.body);
@@ -42,7 +40,6 @@ app.post('/api/posts', async (req, res) => {
     }
 });
 
-// GET all blog posts
 app.get('/api/posts', async (req, res) => {
     try {
         const posts = await BlogPost.find().sort({ date: -1 });
@@ -52,7 +49,6 @@ app.get('/api/posts', async (req, res) => {
     }
 });
 
-// GET a single blog post by ID
 app.get('/api/posts/:id', async (req, res) => {
     try {
         const post = await BlogPost.findById(req.params.id);
@@ -65,7 +61,6 @@ app.get('/api/posts/:id', async (req, res) => {
     }
 });
 
-// DELETE a blog post by ID
 app.delete('/api/posts/:id', async (req, res) => {
     try {
         const deletedPost = await BlogPost.findByIdAndDelete(req.params.id);
@@ -78,15 +73,8 @@ app.delete('/api/posts/:id', async (req, res) => {
     }
 });
 
-app.get('/', (req, res) => {
-    res.send({
-        activeStatus: true,
-        error: false
-    })
-})
-
-
-// Serve static files from the client directory
+// Serve static files from the client directory.
+// This single line will serve index.html for the root URL automatically.
 app.use(express.static(path.join(__dirname, '../client')));
 
 const PORT = process.env.PORT || 3000;
